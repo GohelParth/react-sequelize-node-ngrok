@@ -18,7 +18,7 @@ const Register = () => {
                 fullName, email, contact, password
             }
             console.log(params);
-            const { data } = await axios.post("base/api/insert", params)
+            const { data } = await axios.post("https://a-react-backend-api-1.herokuapp.com/base/api/insert", params)
 
             console.log("data : ", data.status);
 
