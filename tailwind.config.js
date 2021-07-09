@@ -12,10 +12,16 @@ module.exports = {
         'footer-texture': "url('./Images/BCK1.webp')",
         'image': "url('./Images/BCK2.webp')",
         'image1': "url('./Images/bck_HP_2.jpg')",
+        'bckfood': "url('./Images/BCKFOOD.webp')",
+        'icecreambck': "url('./Images/icecreambck.webp')",
+        'bckcone': "url('./Images/bckcone.webp')",
+        'bck13': "url('./Images/bck13.jpg')",
+        'notes': "url('./Images/HP_notes-3.jpg')"
       })
     },
     screens: {
       sm: '640px',
+      custome: '1212px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
