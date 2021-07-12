@@ -36,7 +36,7 @@ const Register = () => {
 
     return (
         <>
-            <div className="grid grid-cols-1 lg:grid-cols-3 bg-gray-800 bg-cover">
+            <div className="grid grid-cols-1 lg:grid-cols-3 bg-black bg-cover">
                 <div className="">
 
                     <div className="min-h-screen flex items-center justify-center py-12 px-4 mt-5 sm:px-6 lg:px-8">
@@ -47,7 +47,7 @@ const Register = () => {
                                     src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                                     alt="Workflow"
                                 />
-                                <h2 className="mt-6 text-center text-3xl font-extrabold text-yellow-200">Signup for new account</h2>
+                                <h2 className="mt-6 text-center text-3xl font-extrabold text-white">Signup for new account</h2>
 
                             </div>
                             <form onSubmit={submit} className="mt-8 space-y-6" method="POST">
@@ -70,22 +70,16 @@ const Register = () => {
                                         Signup
                                     </button>
                                 </div>
-
-                                <div className="flex items-center justify-between">
-                                    <div className="text-sm">
-                                        <Link to="" className="font-bold text-yellow-50 hover:text-white">
-                                            Forgot your password?
-                                        </Link>
-                                    </div>
-                                </div>
+                                <p className="text-white mt-5 font-bold">Already have an account ? <Link className="text-blue-500" to="/login">Login</Link></p>
+                                <p className="text-white font-bold">Back to home ? <Link className="text-blue-500" to="/">Click here</Link></p>
                             </form>
                         </div>
                     </div>
                 </div>
                 <div className="col-span-2 bg-bckfood bg-cover">
                     <div className="animate-bounce font-serif text-4xl mt-96 font-bold text-center ">
-                        <p className="text-red-400">Hey! Register</p>
-                        <p className="mt-3 text-yellow-400">Welcome to our site!</p>
+                        <p className="text-red-500">Hey! Register</p>
+                        <p className="mt-3 text-gray-800">Welcome to our site!</p>
                     </div>
                 </div>
             </div>
@@ -95,5 +89,3 @@ const Register = () => {
 
 export default Register;
 
-// Github link for landing page tailwind css
-//https://github.com/cruip/tailwind-landing-page-template

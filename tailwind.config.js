@@ -16,7 +16,11 @@ module.exports = {
         'icecreambck': "url('./Images/icecreambck.webp')",
         'bckcone': "url('./Images/bckcone.webp')",
         'bck13': "url('./Images/bck13.jpg')",
-        'notes': "url('./Images/HP_notes-3.jpg')"
+        'notes': "url('./Images/HP_notes-3.jpg')",
+        'bckburger': "url('./Images/bckburger.webp')",
+        'bckbg': "url('./Images/bckbg.webp')",
+        'bckbg2': "url('./Images/bckbg2.webp')",
+        'bckbg3': "url('./Images/bckbg3.webp')"
       })
     },
     screens: {
