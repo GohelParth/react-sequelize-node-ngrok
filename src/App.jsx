@@ -4,6 +4,7 @@ import Register from './pages/Register';
 import Home from './pages/Home';
 import { Toaster } from 'react-hot-toast';
 import Welcome from './pages/Welcome';
+import './index.css'
 
 const App = () => {
     return (
