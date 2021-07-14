@@ -3,6 +3,14 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { Field } from '../Components/Field';
 import { Link } from 'react-router-dom';
+import PacmanLoader from 'react-spinners/PacmanLoader';
+import { css } from '@emotion/react';
+
+const override = css`
+            display: flex;
+            margin-left:185px;
+            margin-top:250px;
+            `;
 
 const Register = () => {
 
@@ -10,24 +18,30 @@ const Register = () => {
     const [email, setEmail] = useState();
     const [contact, setContact] = useState();
     const [password, setPassword] = useState();
+    const [isLoading, setIsLoding] = useState(false);
 
     const submit = async (e) => {
+
         e.preventDefault();
+        setIsLoding(true)
 
         try {
+
             const params = {
                 fullName, email, contact, password
             }
             console.log(params);
-            const { data } = await axios.post("https://a-react-backend-api-1.herokuapp.com/base/api/insert", params)
+            const { data } = await axios.post(`${process.env.REACT_APP_API_KEY}base/api/insert`, params)
 
             console.log("data : ", data.status);
 
             if (data.status === 200) {
+                setIsLoding(false)
                 toast.success(data.message)
             }
         } catch (error) {
             if (error.response.data.status === 400) {
+                setIsLoding(false)
                 toast.error(error.response.data.message)
             }
             console.log(error.response.data.message);
@@ -38,7 +52,6 @@ const Register = () => {
         <>
             <div className="grid grid-cols-1 lg:grid-cols-3 bg-black bg-cover">
                 <div className="">
-
                     <div className="min-h-screen flex items-center justify-center py-12 px-4 mt-5 sm:px-6 lg:px-8">
                         <div className=" max-w-md w-full space-y-7 -mt-24">
                             <div>
@@ -73,6 +86,7 @@ const Register = () => {
                                 <p className="text-white mt-5 font-bold">Already have an account ? <Link className="text-blue-500" to="/login">Login</Link></p>
                                 <p className="text-white font-bold">Back to home ? <Link className="text-blue-500" to="/">Click here</Link></p>
                             </form>
+                            {isLoading ? <PacmanLoader size={25} color={"#325aee"} loading={isLoading} css={override} /> : ""}
                         </div>
                     </div>
                 </div>
@@ -83,6 +97,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+
         </>
     )
 }

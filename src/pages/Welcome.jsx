@@ -1,12 +1,12 @@
 import React from 'react';
-// import imgsrc from '../Images//bckbg.webp';
-// import { Link } from 'react-router-dom';
+import imgsrc from '../Images//bckbg.webp';
+import { Link } from 'react-router-dom';
 
 const Welcome = () => {
     return (
         <>
-            <h1>Hello</h1>
-            {/* <main>
+
+            <main>
                 <div className="relative pt-16 pb-32 flex content-center items-center justify-center"
                     style={{
                         minHeight: "75vh"
@@ -286,7 +286,7 @@ const Welcome = () => {
                         <p className="text-yellow-300 text-center font-bold text-3xl">Thank you</p>
                     </div>
                 </section>
-            </main> */}
+            </main>
         </>
     )
 }
