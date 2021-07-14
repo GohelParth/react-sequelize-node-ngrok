@@ -3,14 +3,24 @@ import { Field } from '../Components/Field';
 import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import ScaleLoader from 'react-spinners/ScaleLoader';
+import { css } from '@emotion/react';
+
+const override = css`
+            display: flex;
+            margin-left:220px;
+            margin-top:200px;
+            `;
 
 const Home = () => {
 
     const [userName, setusername] = useState();
     const [password, setPassword] = useState();
+    const [isLoading, setIsLoding] = useState(false);
 
     const submit = async (e) => {
         e.preventDefault();
+        setIsLoding(true)
 
         try {
             const params = {
@@ -20,10 +30,12 @@ const Home = () => {
             const { data } = await axios.post("https://a-react-backend-api-1.herokuapp.com/base/api/login", params)
 
             if (data.status === 200) {
+                setIsLoding(false)
                 toast.success(data.message)
             }
         } catch (error) {
             if (error.response.data.status === 400) {
+                setIsLoding(false)
                 toast.error(error.response.data.message)
             }
         }
@@ -70,6 +82,7 @@ const Home = () => {
                                         </p>
                                         <p className="text-white mt-5 text-center font-bold -ml-4">Don't have an acoount ? <Link className="text-blue-500" to="/signup">Signup</Link></p>
                                         <p className="text-white font-bold mt-5">Back to home ? <Link className="text-blue-500" to="/">Click here</Link></p>
+                                        {isLoading ? <ScaleLoader size={35} color={"#F1DF24"} loading={isLoading} css={override} /> : ""}
                                     </div>
                                 </div>
                             </form>

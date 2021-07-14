@@ -3,12 +3,12 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { Field } from '../Components/Field';
 import { Link } from 'react-router-dom';
-import PacmanLoader from 'react-spinners/PacmanLoader';
+import ScaleLoader from 'react-spinners/ScaleLoader';
 import { css } from '@emotion/react';
 
 const override = css`
             display: flex;
-            margin-left:185px;
+            margin-left:205px;
             margin-top:250px;
             `;
 
@@ -44,7 +44,6 @@ const Register = () => {
                 setIsLoding(false)
                 toast.error(error.response.data.message)
             }
-            console.log(error.response.data.message);
         }
     }
 
@@ -86,7 +85,7 @@ const Register = () => {
                                 <p className="text-white mt-5 font-bold">Already have an account ? <Link className="text-blue-500" to="/login">Login</Link></p>
                                 <p className="text-white font-bold">Back to home ? <Link className="text-blue-500" to="/">Click here</Link></p>
                             </form>
-                            {isLoading ? <PacmanLoader size={25} color={"#325aee"} loading={isLoading} css={override} /> : ""}
+                            {isLoading ? <ScaleLoader size={25} color={"#F1DF24"} loading={isLoading} css={override} /> : ""}
                         </div>
                     </div>
                 </div>
@@ -97,7 +96,6 @@ const Register = () => {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }
